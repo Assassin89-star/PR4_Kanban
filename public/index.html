@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+   
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div class="header">
+        <span class="header-title">Awesome Kanban Board</span>
+        <div class="cube">
+          <img class="avatar">
+        </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     
+    <div class="container">
+        <div class="container-fluid">
+            <div id="sortableKanbanBoards" class="row">
+    <div class="panel panel-primary kanban-col">
+      <div class="panel-heading">
+        Backlog
+          <i class="fa fa-2x fa-plus-circle pull-right"></i>
+      </div>
+      <div class="panel-body">
+          <div id="TODO" class="kanban-centered">
+              <article class="kanban-entry grab" id="item1" draggable="true">
+                  <div class="kanban-entry-inner">
+                      <div class="kanban-label">
+                          <p>Login page – performance issues</p>
+                      </div>
+                  </div>
+              </article>
+              <article class="kanban-entry grab" id="item2" draggable="true">
+                  <div class="kanban-entry-inner">
+                      <div class="kanban-label">
+                          <p>Sprint bugfix</p>
+                      </div>
+                  </div>
+              </article>
+          </div>
+      </div>
+      <div class="panel-footer">
+          <a href="#">+ Add a card...</a>
+      </div>
+  </div>
+            <div class="panel panel-primary kanban-col">
+              <div class="panel-heading">
+                Ready
+                  <i class="fa fa-2x fa-plus-circle pull-right"></i>
+              </div>
+              <div class="panel-body">
+                  <div id="DOING" class="kanban-centered">
+
+                      <article class="kanban-entry grab" id="item5" draggable="true">
+                          <div class="kanban-entry-inner">
+
+                              <div class="kanban-label">
+                                  <p>Shop page – performance issues</p>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item6" draggable="true">
+                          <div class="kanban-entry-inner">
+                              <div class="kanban-label">
+                                  <p>Checkout bugfix</p>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item7" draggable="true">
+                        <div class="kanban-entry-inner">
+                            <div class="kanban-label">
+                                <p>Shop bug1</p>
+                            </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item8" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                              <p>Shop bug2</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item9" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug3</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item10" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug4</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item11" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug5</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item12" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug6</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item13" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop page – performance issues </p>
+                          </div>
+                        </div>
+                      </article>
+
+                  </div>
+              </div>
+              <div class="panel-footer">
+                  <a href="#">+ Add a card...</a>
+              </div>
+          </div>
+          <div class="panel panel-primary kanban-col">
+              <div class="panel-heading">
+                In Progress
+                  <i class="fa fa-2x fa-plus-circle pull-right"></i>
+              </div>
+              <div class="panel-body">
+                  <div id="DONE" class="kanban-centered">
+
+                      <article class="kanban-entry grab" id="item5" draggable="true">
+                          <div class="kanban-entry-inner">
+                              <div class="kanban-label">
+                                  <p>User page – performance issues</p>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item6" draggable="true">
+                          <div class="kanban-entry-inner">
+                              <div class="kanban-label">
+                                  <p>Auth bugfix</p>
+                              </div>
+                          </div>
+                      </article>
+
+                  </div>
+              </div>
+              <div class="panel-footer">
+                  <a href="#">+ Add a card...</a>
+              </div>
+          </div>
+          <div class="panel panel-primary kanban-col">
+            <div class="panel-heading">
+              Finished
+                <i class="fa fa-2x fa-plus-circle pull-right"></i>
+            </div>
+            <div class="panel-body">
+                <div id="DONE" class="kanban-centered">
+
+                    <article class="kanban-entry grab" id="item5" draggable="true">
+                        <div class="kanban-entry-inner">
+
+                            <div class="kanban-label">
+                                <p>Main page – performance issues</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kanban-entry grab" id="item6" draggable="true">
+                        <div class="kanban-entry-inner">
+                            <div class="kanban-label">
+                                <p>Main page bugfix</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                <a href="#">+ Add a card...</a>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="text-center">
+                      <i class="fa fa-refresh fa-5x fa-spin"></i>
+                      <h4>Processing...</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+    <div class="footer">
+      <span class="footer-text f-text1">Active tasks: N</span>
+      <span class="footer-text f-text2">Finished tasks: M</span>
+      <span class="footer-text f-text3">Kanban board by NAME, YEAR </span>
+    </div>
+    
+   </div>
+</div>
+  </body>
+</html>
