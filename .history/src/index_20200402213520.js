@@ -77,7 +77,7 @@ class TodoForm extends React.Component {
   
 class TodoHeader extends React.Component {
   render () {
-    return <h1></h1>;
+    return <h1>Tasks in work</h1>;
   }
 }
   

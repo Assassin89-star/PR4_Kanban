@@ -13,7 +13,7 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
    
     <title>React App</title>
-
+    <!--__________KANBAN_________________-->
     <style>
       #board {
           display: table;
@@ -39,7 +39,18 @@
           text-align: center;
       }
       .card {
-      
+          /*display: inline-block;
+          vertical-align: top;
+          margin: 10px 5px;
+          padding: 10px;
+          width: 100px;
+          height: 100px;
+          color: black;
+          background: #ff8;
+          cursor: move;
+          text-align: center;
+          font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          box-shadow: 2px 2px 2px #eee;*/
           position: relative;
           background: #f5f5f6;
           padding: 0.75em;
@@ -53,8 +64,11 @@
           cursor: move;
       }
   </style>
+
+    <!--_________________________________-->
   </head>
   <body>
+    <!--___________________KANBAN____________________-->
     <div id="board">
       <div id="todo" class="section">
           <h1>To Do</h1>
@@ -69,7 +83,8 @@
           <h1>Done</h1>
       </div>
   </div>
-    
+
+    <!--________________________________-->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div class="header">
@@ -83,7 +98,8 @@
     <script src="//yastatic.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   
+     
+    <!-- Section_1 -->
     <div class="container_section_1">
         <div class="container-fluid">
             <div id="sortableKanbanBoards" class="row">
@@ -96,13 +112,29 @@
         <div id="TODO" class="kanban-centered">
           <article class="kanban-entry grab" id="item1"draggable="true">
             <div class="kanban-entry-inner">
-    
+              <!--<div class="kanban-label">
+                <p>Login page app performance issues</p>
+              </div>-->
             </div>
           </article>
       </div>
+      <!--__________________ToDo_______________________-->
+
       <div id="app"></div>
+      
+
+      <!--__________________ToDo_______________________-->
+      <!--__________________ASK ADD_______________________
+      <div class="add_block">
+        <input class="click_to_add_block" type="button" value="Добавить блок">
+      </div>      
+      __________________END ADD ASK______________________________-->
       </div>
+      <!--<div class="panel-footer">
+          <a href="#">+ Add a card...</a>
+      </div>-->
   </div>
+  <!-- Section_2 -->
             <div class="panel panel-primary kanban-col">
               <div class="panel-heading">
                 Ready
@@ -119,7 +151,7 @@
                               </div>
                           </div>
                       </article>
-                      <article class="kanban-entry grab" id="item6" draggable="true">
+                      <!--<article class="kanban-entry grab" id="item6" draggable="true">
                           <div class="kanban-entry-inner">
                               <div class="kanban-label">
                                   <p>Checkout bugfix</p>
@@ -133,7 +165,7 @@
                             </div>
                         </div>
                       </article>
-                      <!--<article class="kanban-entry grab" id="item8" draggable="true">
+                      <article class="kanban-entry grab" id="item8" draggable="true">
                         <div class="kanban-entry-inner">
                           <div class="kanban-label">
                               <p>Shop bug2</p>
@@ -182,6 +214,7 @@
                   <a href="#">+ Add a card...</a>
               </div>
           </div>
+          <!-- Section_3 -->
           <div class="panel panel-primary kanban-col">
               <div class="panel-heading">
                 In Progress
@@ -211,6 +244,7 @@
                   <a href="#">+ Add a card...</a>
               </div>
           </div>
+          <!-- Section_4 -->
           <div class="panel panel-primary kanban-col">
             <div class="panel-heading">
               Finished
@@ -300,32 +334,37 @@
           hideMe.style.visibility = 'hidden';
           hideMe = null;
       }
-
+      // Save this to check in dragleave.
       lastEntered = e.target;
       var section = closestWithClass(e.target, 'section');
- 
+      // TODO: Check that it's not the original section.
+      if (section) {
           section.classList.add('droppable');
-          e.preventDefault(); 
+          e.preventDefault(); // Not sure if these needs to be here. Maybe for IE?
           return false;
       }
+  };
 
   board.ondragover = function(e) {
-
+      // TODO: Check data type.
+      // TODO: Check that it's not the original section.
       if (closestWithClass(e.target, 'section')) {
           e.preventDefault();
       }
   };
 
   board.ondragleave = function(e) {
- 
+      // FF is raising this event on text nodes so only check elements.
       if (e.target.nodeType === 1) {
-        
+          // dragleave for outer elements can trigger after dragenter for inner elements
+          // so make sure we're really leaving by checking what we just entered.
+          // relatedTarget is missing in WebKit: https://bugs.webkit.org/show_bug.cgi?id=66547
           var section = closestWithClass(e.target, 'section');
           if (section && !section.contains(lastEntered)) {
               section.classList.remove('droppable');
           }
       }
-      lastEntered = null; 
+      lastEntered = null; // No need to keep this around.
   };
 
   board.ondrop = function(e) {
@@ -333,7 +372,7 @@
       var id = e.dataTransfer.getData('card');
       if (id) {
           var card = document.getElementById(id);
-        
+          // Might be a card from another window.
           if (card) {
               if (section !== card.parentNode) {
                   section.appendChild(card);

@@ -1,10 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+//import * as serviceWorker from './serviceWorker';
 import App from './App'
 
+/*____________________ToDo_______________*/
+     /*
+Todo app structure
 
+TodoApp
+	- TodoHeader
+	- TodoList
+    - TodoListItem #1
+		- TodoListItem #2
+		  ...
+		- TodoListItem #N
+	- TodoForm
+*/
+/*____________________KANBAN_______________*/
+
+/*____________________KANBAN_______________*/
+/*____________________ToDoList_Begin_______________*/
 var todoItems = [];
+/*todoItems.push({index: 1, value: "learn react", done: false});
+todoItems.push({index: 2, value: "Go shopping", done: true});
+todoItems.push({index: 3, value: "buy flowers", done: true});*/
 
 class TodoList extends React.Component {
   render () {
@@ -77,7 +97,7 @@ class TodoForm extends React.Component {
   
 class TodoHeader extends React.Component {
   render () {
-    return <h1></h1>;
+    return <h1>Tasks in work</h1>;
   }
 }
   
@@ -122,4 +142,81 @@ class TodoApp extends React.Component {
 }
 
 ReactDOM.render(<TodoApp initItems={todoItems}/>, document.getElementById('app'));
+/*____________________ToDoList__END_______________*/
+/*_________________________________ADD ASK___Добавить блок_______________
 
+$('.click_to_add_block').click(function() {
+    $(this).before(
+  <div class="block_to_add">
+    <div class="topic">
+      <input type="text" placeholder="Тема">
+        <div class="description">
+            <textarea placeholder="Текст"></textarea>
+        </div>
+    </div>
+
+    <button class="delete">удалить</button>
+  </div>);
+  });
+  
+  $(document).on('click', '.delete', function() {
+    $(this).parent().remove();
+  });
+_________________________ END ASK ________________________*/
+
+/*$(function () {
+    var kanbanCol = $('.panel-body');
+    kanbanCol.css('max-height', (window.innerHeight - 150) + 'px');
+  
+    var kanbanColCount = parseInt(kanbanCol.length);
+    $('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
+  
+    draggableInit();
+  
+    $('.panel-heading').click(function() {
+        var $panelBody = $(this).parent().children('.panel-body');
+        $panelBody.slideToggle();
+    });
+  });
+  
+  function draggableInit() {
+    var sourceId;
+  
+    $('[draggable=true]').bind('dragstart', function (event) {
+        sourceId = $(this).parent().attr('id');
+        event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
+    });
+  
+    $('.panel-body').bind('dragover', function (event) {
+        event.preventDefault();
+    });
+  
+    $('.panel-body').bind('drop', function (event) {
+        var children = $(this).children();
+        var targetId = children.attr('id');
+  
+        if (sourceId != targetId) {
+            var elementId = event.originalEvent.dataTransfer.getData("text/plain");
+  
+            $('#processing-modal').modal('toggle'); //before post
+  
+  
+            // Post data 
+            setTimeout(function () {
+                var element = document.getElementById(elementId);
+                children.prepend(element);
+                $('#processing-modal').modal('toggle'); // after post
+            }, 1000);
+  
+        }
+  
+        event.preventDefault();
+    });
+  }
+  */
+
+/*Моя тема
+//ReactDOM.render(<App />, document.getElementById('root'));
+//registerServiceWorker();
+serviceWorker.unregister();
+моя тема*/
