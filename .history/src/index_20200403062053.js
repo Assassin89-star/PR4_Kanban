@@ -4,7 +4,7 @@ import './index.css';
 import App from './App'
 
 
-var todoItems = [];
+/*var todoItems = [];
 
 class TodoList extends React.Component {
   render () {
@@ -121,8 +121,9 @@ class TodoApp extends React.Component {
   }
 }
 
-ReactDOM.render(<TodoApp initItems={todoItems}/>, document.getElementById('app'));
+ReactDOM.render(<TodoApp initItems={todoItems}/>, document.getElementById('app'));*/
 
+/*________________________________________________________*/
 var dragSrcEl = null;
 
 function handleDragStart(e) {
@@ -161,6 +162,8 @@ var cols = document.querySelectorAll('#columns .column');
   col.addEventListener('dragleave', handleDragLeave, false);
 });
 function handleDrop(e) {
+ 
+
   if (e.stopPropagation) {
     e.stopPropagation(); 
   }
@@ -189,4 +192,5 @@ var cols = document.querySelectorAll('#columns .column');
   col.addEventListener('drop', handleDrop, false);
   col.addEventListener('dragend', handleDragEnd, false);
 });
+
 

@@ -43,6 +43,7 @@
           position: relative;
           background: #f5f5f6;
           padding: 0.75em;
+              /*margin-left: 50px;*/
           -webkit-background-clip: padding-box;
           -moz-background-clip: padding;
           background-clip: padding-box;
@@ -57,6 +58,8 @@
     <div id="board">
       <div id="todo" class="section">
           <h1>To Do</h1>
+          <!--<div id="c2" class="card">Make Killer App</div>
+          <div id="c3" class="card"><em>Retire!</em></div>-->
           <div id="c2" class="card">Make Killer App</div>
           <div id="c3" class="card"><em>Retire!</em></div>
 
@@ -109,6 +112,13 @@
                 Ready
                   <i class="fa fa-2x fa-plus-circle pull-right"></i>
               </div>
+              <!--____________________________________________________________-->
+            <div id="columns">
+              <div class="kanban-label card" draggable="true"><header>A</header></div>
+              <div class="kanban-entry kanban-label grab" draggable="true"><header>B</header></div>
+              <div class="kanban-label" draggable="true"><header>C</header></div>
+            </div>
+      <!--____________________________________________________________-->
               <div class="panel-body">
                   <div id="DOING" class="kanban-centered">
 
@@ -134,6 +144,49 @@
                             </div>
                         </div>
                       </article>
+                      <!--<article class="kanban-entry grab" id="item8" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                              <p>Shop bug2</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item9" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug3</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item10" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug4</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item11" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug5</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item12" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop bug6</p>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item13" draggable="true">
+                        <div class="kanban-entry-inner">
+                          <div class="kanban-label">
+                            <p>Shop page – performance issues </p>
+                          </div>
+                        </div>
+                      </article>-->
+
                   </div>
               </div>
               <div class="panel-footer">
@@ -143,6 +196,7 @@
           <div class="panel panel-primary kanban-col">
               <div class="panel-heading">
                 In Progress
+                  <i class=""></i>
               </div>
               <div class="panel-body">
                   <div id="DONE" class="kanban-centered">
@@ -201,7 +255,18 @@
         </div>
       </div>
   </div>
-  
+  <div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="text-center">
+                      <i class="fa fa-refresh fa-5x fa-spin"></i>
+                      <h4>Processing...</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
     <div class="footer">
       <span class="footer-text f-text1">Active tasks: N</span>

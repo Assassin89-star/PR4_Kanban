@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App'
 
-
+/* ____Begin ToDoList______________________________________*/
 var todoItems = [];
 
 class TodoList extends React.Component {
@@ -122,7 +122,9 @@ class TodoApp extends React.Component {
 }
 
 ReactDOM.render(<TodoApp initItems={todoItems}/>, document.getElementById('app'));
+/* ____END ToDoList______________________________________*/
 
+/*_____Begin Draggable___________________________________*/
 var dragSrcEl = null;
 
 function handleDragStart(e) {
@@ -189,4 +191,5 @@ var cols = document.querySelectorAll('#columns .column');
   col.addEventListener('drop', handleDrop, false);
   col.addEventListener('dragend', handleDragEnd, false);
 });
+/*_____Begin Draggable___________________________________*/
 

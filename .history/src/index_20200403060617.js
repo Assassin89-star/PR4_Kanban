@@ -123,10 +123,11 @@ class TodoApp extends React.Component {
 
 ReactDOM.render(<TodoApp initItems={todoItems}/>, document.getElementById('app'));
 
+/*________________________________________________________*/
 var dragSrcEl = null;
 
 function handleDragStart(e) {
-  
+  // Целевой (этот) элемент является исходным узлом.
   this.style.opacity = '0.4';
 
   dragSrcEl = this;
@@ -137,20 +138,20 @@ function handleDragStart(e) {
 
 function handleDragOver(e) {
   if (e.preventDefault) {
-    e.preventDefault(); 
+    e.preventDefault(); // Necessary. Allows us to drop.
   }
 
-  e.dataTransfer.dropEffect = 'move'; 
+  e.dataTransfer.dropEffect = 'move';  // См. раздел по объекту DataTransfer.
   return false;
 }
 
 function handleDragEnter(e) {
-
+  // this / e.target is the current hover target.
   this.classList.add('over');
 }
 
 function handleDragLeave(e) {
-  this.classList.remove('over'); 
+  this.classList.remove('over');  // this / e.target is previous target element.
 }
 
 var cols = document.querySelectorAll('#columns .column');
@@ -161,11 +162,15 @@ var cols = document.querySelectorAll('#columns .column');
   col.addEventListener('dragleave', handleDragLeave, false);
 });
 function handleDrop(e) {
+  // this/e.target is current target element.
+
   if (e.stopPropagation) {
-    e.stopPropagation(); 
+    e.stopPropagation(); // Блокирует перенаправление некоторых браузеров.
   }
- 
+
+  // Не выполнять действия, если перетаскивается тот же столбец.
   if (dragSrcEl != this) {
+    // Установка HTML-кода исходного столбца в HTML-код столбца.
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData('text/html');
   }
@@ -174,6 +179,7 @@ function handleDrop(e) {
 }
 
 function handleDragEnd(e) {
+  // this/e.target is the source node.
 
   [].forEach.call(cols, function (col) {
     col.classList.remove('over');
@@ -189,4 +195,5 @@ var cols = document.querySelectorAll('#columns .column');
   col.addEventListener('drop', handleDrop, false);
   col.addEventListener('dragend', handleDragEnd, false);
 });
+
 
