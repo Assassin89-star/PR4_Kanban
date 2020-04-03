@@ -43,21 +43,15 @@
     height: 600px;
     left: 0px;
 }
-
-html, body {
-  height: 100%;
-  color: #61DAFB;
-  background: #2D2D2D;
+.input-field_1 {
+  position: relative;
+  left: 20px;
 }
 
-h1 {
-  margin: 20px 0 15px 0;  
-}
-
-#main {
-  width: 250px;
-  margin: 0 auto;
-  text-align: left;
+.topic input {
+  width:200px;
+  height:30px;
+  box-sizing:border-box;
 }
 
 ul {
@@ -78,19 +72,6 @@ li {
 ul>li:hover {
   background-color: #F5F5F5;
   cursor: pointer;
-}
-
-.done {
-  color: red;
-  text-decoration: line-through;
-}
-
-.undone {
-  color: #61DAFB;
-}
-
-.icon {
-  margin: 6px 10px 6px 0;
 }
 
 .footer {
@@ -131,7 +112,6 @@ left: 195px;
   position: relative;
   margin-bottom: 30px;
 }
-
   .kanban-centered .kanban-entry {
       position: relative;
       margin: 10px 8px;
@@ -178,8 +158,7 @@ left: 195px;
 .panel-heading {
   cursor: context-menu;
 }
-
-  .panel-heading i {
+.panel-heading i {
       cursor: pointer;
   }
 
@@ -208,47 +187,4 @@ body {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-}
-
-.column {
-  height: 150px;
-  width: 150px;
-  float: left;
-  border: 2px solid #666666;
-  background-color: #ccc;
-  margin-right: 5px;
-  -webkit-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 3px #000;
-  -ms-box-shadow: inset 0 0 3px #000;
-  box-shadow: inset 0 0 3px #000;
-  text-align: center;
-  cursor: move;
-}
-.column header {
-  color: #fff;
-  text-shadow: #000 0 1px;
-  box-shadow: 5px;
-  padding: 5px;
-  background: -moz-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  background: -webkit-gradient(linear, left top, right top,
-                               color-stop(0, rgb(0,0,0)),
-                               color-stop(0.50, rgb(79,79,79)),
-                               color-stop(1, rgb(21,21,21)));
-  background: -webkit-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  background: -ms-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  border-bottom: 1px solid #ddd;
-  -webkit-border-top-left-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -ms-border-radius-topleft: 10px;
-  border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -ms-border-top-right-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-right-radius: 10px;
-}
-  .column.over {
-  border: 2px dashed #000;
 }

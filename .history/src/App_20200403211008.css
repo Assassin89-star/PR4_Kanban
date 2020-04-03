@@ -6,6 +6,8 @@
   top: 0px;
   background: #0067A3;
 }
+
+
 .cube {
   position: absolute;
   width: 40px;
@@ -43,7 +45,6 @@
     height: 600px;
     left: 0px;
 }
-
 html, body {
   height: 100%;
   color: #61DAFB;
@@ -55,29 +56,14 @@ h1 {
 }
 
 #main {
-  width: 250px;
+  width: 600px;
   margin: 0 auto;
   text-align: left;
 }
 
-ul {
-  list-style: none;
-}
-li {
-  position: relative;
-  background: #f5f6f6;
-  padding: 1em;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-ul>li:hover {
-  background-color: #F5F5F5;
-  cursor: pointer;
+.form-inline .form-control {
+  width: 50%;
+  margin-left: 80px;
 }
 
 .done {
@@ -92,6 +78,26 @@ ul>li:hover {
 .icon {
   margin: 6px 10px 6px 0;
 }
+.input-field_1 {
+  position: relative;
+  left: 20px;
+}
+
+.topic input {
+  width:200px;
+  height:30px;
+  box-sizing:border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+ul>li:hover {
+  background-color: #F5F5F5;
+  cursor: pointer;
+}
+
 
 .footer {
     position: relative;
@@ -131,7 +137,6 @@ left: 195px;
   position: relative;
   margin-bottom: 30px;
 }
-
   .kanban-centered .kanban-entry {
       position: relative;
       margin: 10px 8px;
@@ -178,8 +183,7 @@ left: 195px;
 .panel-heading {
   cursor: context-menu;
 }
-
-  .panel-heading i {
+.panel-heading i {
       cursor: pointer;
   }
 
@@ -208,47 +212,4 @@ body {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-}
-
-.column {
-  height: 150px;
-  width: 150px;
-  float: left;
-  border: 2px solid #666666;
-  background-color: #ccc;
-  margin-right: 5px;
-  -webkit-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 3px #000;
-  -ms-box-shadow: inset 0 0 3px #000;
-  box-shadow: inset 0 0 3px #000;
-  text-align: center;
-  cursor: move;
-}
-.column header {
-  color: #fff;
-  text-shadow: #000 0 1px;
-  box-shadow: 5px;
-  padding: 5px;
-  background: -moz-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  background: -webkit-gradient(linear, left top, right top,
-                               color-stop(0, rgb(0,0,0)),
-                               color-stop(0.50, rgb(79,79,79)),
-                               color-stop(1, rgb(21,21,21)));
-  background: -webkit-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  background: -ms-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  border-bottom: 1px solid #ddd;
-  -webkit-border-top-left-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -ms-border-radius-topleft: 10px;
-  border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -ms-border-top-right-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-right-radius: 10px;
-}
-  .column.over {
-  border: 2px dashed #000;
 }

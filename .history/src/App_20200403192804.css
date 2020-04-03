@@ -43,6 +43,31 @@
     height: 600px;
     left: 0px;
 }
+.input-field_1 {
+  position: relative;
+  left: 20px;
+}
+
+.topic input {
+  width:200px;
+  height:30px;
+  box-sizing:border-box;
+}
+
+.description {
+  margin-top:10px;
+}
+.description textarea {
+  width:200px;
+  height:100px;
+  box-sizing:border-box;
+}
+
+.block_to_add {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid silver;
+}
 
 html, body {
   height: 100%;
@@ -127,10 +152,67 @@ left: 195px;
   left: 937px;
   }
 
+img {
+  vertical-align: middle;
+}
+
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.img-rounded {
+  border-radius: 3px;
+}
+
+.img-thumbnail {
+  background-color: #fff;
+  border: 1px solid #ededf0;
+  border-radius: 3px;
+  display: inline-block;
+  height: auto;
+  line-height: 1.428571429;
+  max-width: 100%;
+  padding: 2px;
+  transition: all .2s ease-in-out;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
 .kanban-centered {
   position: relative;
   margin-bottom: 30px;
 }
+
+  .kanban-centered:before, .kanban-centered:after {
+      content: " ";
+      display: table;
+  }
+
+  .kanban-centered:after {
+      clear: both;
+  }
+
+  .kanban-centered:before, .kanban-centered:after {
+      content: " ";
+      display: table;
+  }
+
+  .kanban-centered:after {
+      clear: both;
+  }
+
+  .kanban-centered:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 2px;
+      top: 20px;
+      bottom: 20px;
+  }
 
   .kanban-centered .kanban-entry {
       position: relative;
@@ -190,6 +272,7 @@ body {
   -o-user-select: none;
   user-select: none;
 }
+/*___________________________________________*/
 
 #draggable {
   width: 200px;
@@ -209,7 +292,14 @@ body {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-
+/*[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}*/
 .column {
   height: 150px;
   width: 150px;

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+   
+    <title>React App</title>
+
+    <style>
+      #board {
+          display: table;
+          margin: 0;
+          padding: 0;
+          border-spacing: 5px;
+      }
+      #block1 {
+        display: table-cell;
+          margin: 0;
+          border: 1px solid #666;
+          text-align: center;
+          padding: 5px;
+          width: 300px;
+      }
+      #div1 {
+            border-color: yellow;
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            order: 1px solid #aaaaaa;
+            }
+
+      .section {
+          display: table-cell;
+          margin: 0;
+          border: 1px solid #666;
+          padding: 5px;
+          width: 300px;
+      }
+      .section.droppable {
+          border: 1px dashed #666;
+      }
+      .section > h1 {
+          margin: 0;
+          border-bottom: 1px solid #999;
+          padding: 0;
+          font-size: 12pt;
+          text-align: center;
+      }
+      .card {
+      
+          position: relative;
+          background: #f5f5f6;
+          padding: 0.75em;
+          -webkit-background-clip: padding-box;
+          -moz-background-clip: padding;
+          background-clip: padding-box;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          cursor: move;
+      }
+  </style>
+  </head>
+  <body>
+    <div id="board">
+      <div id="todo" class="section">
+          <h1>To Do</h1>
+          <div id="c2" class="card">Make Killer App</div>
+          <div id="c3" class="card"><em>Retire!</em></div>
+
+      </div>
+      <div id="doing" class="section">
+          <h1>Doing</h1>
+          <div id="c1" class="card">Learn HTML5</div>
+      </div>
+      <div id="done" class="section">
+          <h1>Done</h1>
+      </div>
+  </div>
+    
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div class="header">
+        <span class="header-title">Awesome Kanban Board</span>
+        <div class="cube">
+          <img class="avatar">
+        </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   
+    <div class="container_section_1">
+        <div class="container-fluid">
+            <div id="sortableKanbanBoards" class="row">
+    <div class="panel panel-primary kanban-col">
+      <div class="panel-heading">
+        Backlog
+          <i class="fa fa-2x fa-plus-circle pull-right"></i>
+      </div>
+      <div>
+      <p id="block1" draggable="true" ondragstart="drag(event)" >Блок для переноса
+    </div>
+      <div class="panel-body">
+        <div id="TODO" class="kanban-centered">
+          <article class="kanban-entry grab" id="item1" draggable="true">
+            <div class="kanban-entry-inner">
+    
+            </div>
+          </article>
+      </div>
+      <div id="app"></div>
+      </div>
+  </div>
+            <div class="panel panel-primary kanban-col">
+              <div class="panel-heading">
+                Ready
+                  <i class="fa fa-2x fa-plus-circle pull-right"></i>
+              </div>
+              <div>
+                <p id="block1" draggable="true" ondragstart="drag(event)" >Блок для переноса
+              </div>
+              <div class="panel-body">
+                  <div id="DOING" class="kanban-centered">
+
+                      <article >
+                          <div class="kanban-entry-inner ">
+                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                          </br>
+                              <div class="kanban-label">
+                                  <!--<p>Shop page – performance issues</p>-->
+                              </div>
+                          </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item6" draggable="true">
+                          <div class="kanban-entry-inner">
+                              <div class="kanban-label">
+                                  <p>Checkout bugfix</p>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item7" draggable="true">
+                        <div class="kanban-entry-inner">
+                            <div class="kanban-label">
+                                <p>Shop bug1</p>
+                            </div>
+                        </div>
+                      </article>
+                  </div>
+              </div>
+              <div class="panel-footer">
+                  <a href="#">+ Add a card...</a>
+              </div>
+          </div>
+          <div class="panel panel-primary kanban-col">
+              <div class="panel-heading">
+                In Progress
+              </div>
+              <div class="panel-body">
+                  <div id="DONE" class="kanban-centered">
+
+                      <article class="kanban-entry grab" id="item5" draggable="true">
+                          <div class="kanban-entry-inner">
+                              <div class="kanban-label">
+                                  <p>User page – performance issues</p>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="kanban-entry grab" id="item6" draggable="true">
+                          <div class="kanban-entry-inner">
+                              <div class="kanban-label">
+                                  <p>Auth bugfix</p>
+                              </div>
+                          </div>
+                      </article>
+
+                  </div>
+              </div>
+              <div class="panel-footer">
+                  <a href="#">+ Add a card...</a>
+              </div>
+          </div>
+          <div class="panel panel-primary kanban-col">
+            <div class="panel-heading">
+              Finished
+                <i class="fa fa-2x fa-plus-circle pull-right"></i>
+            </div>
+            <div class="panel-body">
+                <div id="DONE" class="kanban-centered">
+
+                    <article class="kanban-entry grab" id="item5" draggable="true">
+                        <div class="kanban-entry-inner">
+
+                            <div class="kanban-label">
+                                <p>Main page – performance issues</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kanban-entry grab" id="item6" draggable="true">
+                        <div class="kanban-entry-inner">
+                            <div class="kanban-label">
+                                <p>Main page bugfix</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                <a href="#">+ Add a card...</a>
+            </div>
+        </div>
+      </div>
+  </div>
+  
+</div>
+    <div class="footer">
+      <span class="footer-text f-text1">Active tasks: N</span>
+      <span class="footer-text f-text2">Finished tasks: M</span>
+      <span class="footer-text f-text3">Kanban board by NAME, YEAR </span>
+    </div>
+    
+   </div>
+</div>
+<script>
+  var cards = document.querySelectorAll('.card');
+
+  for (var i = 0, n = cards.length; i < n; i++) {
+      var card = cards[i];
+      card.draggable = true;
+  };
+
+  var board = document.getElementById('board');
+
+  var hideMe;
+
+  board.onselectstart = function(e) {
+      e.preventDefault();
+  }
+
+  board.ondragstart = function(e) {
+      console.log('dragstart');
+      hideMe = e.target;
+      e.dataTransfer.setData('card', e.target.id);
+      e.dataTransfer.effectAllowed = 'move';
+  };
+
+  board.ondragend = function(e) {
+      e.target.style.visibility = 'visible';
+  };
+
+  var lastEneterd;
+
+  board.ondragenter = function(e) {
+      console.log('dragenter');
+      if (hideMe) {
+          hideMe.style.visibility = 'hidden';
+          hideMe = null;
+      }
+
+      lastEntered = e.target;
+      var section = closestWithClass(e.target, 'section');
+ 
+          section.classList.add('droppable');
+          e.preventDefault(); 
+          return false;
+      }
+
+  board.ondragover = function(e) {
+
+      if (closestWithClass(e.target, 'section')) {
+          e.preventDefault();
+      }
+  };
+
+  board.ondragleave = function(e) {
+ 
+      if (e.target.nodeType === 1) {
+        
+          var section = closestWithClass(e.target, 'section');
+          if (section && !section.contains(lastEntered)) {
+              section.classList.remove('droppable');
+          }
+      }
+      lastEntered = null; 
+  };
+
+  board.ondrop = function(e) {
+      var section = closestWithClass(e.target, 'section');
+      var id = e.dataTransfer.getData('card');
+      if (id) {
+          var card = document.getElementById(id);
+        
+          if (card) {
+              if (section !== card.parentNode) {
+                  section.appendChild(card);
+              }
+          } else {
+              alert('couldn\'t find card #' + id);
+          }
+      }
+      section.classList.remove('droppable');
+      e.preventDefault();
+  };
+
+  function closestWithClass(target, className) {
+      while (target) {
+          if (target.nodeType === 1 &&
+              target.classList.contains(className)) {
+              return target;
+          }
+          target = target.parentNode;
+      }
+      return null;
+  }
+</script>
+
+  </body>
+</html>
